@@ -35,7 +35,7 @@ router.post('/restaurants', isAuthenticated, async (req, res, next) => {
 
 // find restaurant
 
-  router.post('/find', isAuthenticated, async (req, res, next) => {
+  router.post('/restaurants/find', isAuthenticated, async (req, res, next) => {
     const { name, neighborhood, cuisine, priority, budget, ambience, veganMenu, glutenFree } = req.body;
     const userId = req.payload._id;
 
@@ -66,7 +66,7 @@ router.post('/restaurants', isAuthenticated, async (req, res, next) => {
     }
   try {
     const foundRestaurants = await Restaurant.find(query)
-    // .collation({ locale: 'en', strength: 2 }).sort({ name: 1 });    
+    .collation({ locale: 'en', strength: 2 }).sort({ name: 1 });    
     res.json(foundRestaurants);
     console.log(foundRestaurants)
   } catch (error) {
