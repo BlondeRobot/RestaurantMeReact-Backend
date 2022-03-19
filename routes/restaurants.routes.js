@@ -18,7 +18,7 @@ router.post('/restaurants', isAuthenticated, async (req, res, next) => {
 
 
 
-// show all restaurants
+// show all restaurants with case insensitive alpha sorting by name
 
   router.get('/restaurants', isAuthenticated, async (req, res, next) => {
 
@@ -33,7 +33,7 @@ router.post('/restaurants', isAuthenticated, async (req, res, next) => {
 
 
 
-// find restaurant
+// find restaurant "AND" query, results with case insensitive alpha sorting by name
 
   router.post('/restaurants/find', isAuthenticated, async (req, res, next) => {
     const { name, neighborhood, cuisine, priority, budget, ambience, veganMenu, glutenFree } = req.body;
@@ -68,7 +68,6 @@ router.post('/restaurants', isAuthenticated, async (req, res, next) => {
     const foundRestaurants = await Restaurant.find(query)
     .collation({ locale: 'en', strength: 2 }).sort({ name: 1 });    
     res.json(foundRestaurants);
-    console.log(foundRestaurants)
   } catch (error) {
     next(error);
   }
