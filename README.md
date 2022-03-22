@@ -1,4 +1,4 @@
-# My project's name
+# RestaurantMe
 
 ​
 
@@ -22,18 +22,9 @@ delete a restaurant - as a user I want to be able to delete a restaurant I'm no 
 save top priority list - as a user I want to be able to save my top priority restaurants list
 share top priority list - as a user I want to be able to share my top priority list with other users
 
-## REST API endpoints
 
-​
-| Name | Method | Endpoint | Auth | Req.body | Redirects |
-|-------|--------|-------------|------|---------------------|-----------|
-| Home | GET | / | Yes | | |
-| Login | POST | /auth/login | No | { email, password } | / |
-​
-​
 
 ## Links
 
-- [Slides]()
 - https://github.com/BlondeRobot/RestaurantMeReact-frontend
-- [Deployed version]()
+- [Deployed version](https://brave-bassi-6a62c5.netlify.app/)
